@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Late Valentine ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:'Comic Sans MS', sans-serif;
+  background:linear-gradient(to bottom, #ff4d6d, white, #ffc0cb);
+  color:#fffff;
+  overflow-x:hidden;
+}
+
+section{
+  padding:100px 10%;
+  text-align:justify;
+}
+
+h1,h2{
+  font-family:'Playfair Display', serif;
+}
+
+/* ================= HERO ================= */
+.hero{
+  height:100vh;
+  background:linear-gradient(to bottom,  #ffc0cb, white, #ffc0cb);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  color:#fffff;
+}
+
+.hero-content{
+  z-index:2;
+  animation:fadeIn 2s ease;
+}
+
+.hero h1{
+  font-size:3rem;
+}
+
+.hero p{
+  margin-top:15px;
+  font-size:1.2rem;
+}
+
+/* Floating hearts */
+.heart{
+  position:absolute;
+  color:#ff4d6d;
+  animation:float 6s infinite;
+  font-size:20px;
+}
+
+@keyframes float{
+  from{transform:translateY(100vh);opacity:1;}
+  to{transform:translateY(-10vh);opacity:0;}
+}
+
+@keyframes fadeIn{
+  from{opacity:0; transform:translateY(30px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+/* ================= GALERI ================= */
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
+  gap:20px;
+}
+
+.gallery-grid img{
+  width:100%;
+  border-radius:15px;
+  cursor:pointer;
+  transition:.4s;
+}
+
+.gallery-grid img:hover{
+  transform:scale(1.05);
+}
+
+/* Lightbox */
+.lightbox{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.8);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:999;
+}
+
+.lightbox img{
+  max-width:90%;
+  max-height:90%;
+  border-radius:15px;
+}
+
+/* ================= VIDEO ================= */
+.video-wrapper{
+  max-width:700px;
+  margin:auto;
+  cursor:pointer;
+}
+
+.video-wrapper video{
+  width:100%;
+  border-radius:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,.2);
+}
+
+/* ================= LOVE LETTER ================= */
+.love-letter{
+  background:white;
+  padding:40px;
+  border-radius:20px;
+  max-width:700px;
+  margin:auto;
+  box-shadow:0 10px 30px rgba(0,0,0,.1);
+  opacity:0;
+  transform:translateY(30px);
+  transition:1s;
+}
+
+.love-letter.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* ================= MUSIC ================= */
+.music-btn{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:white;
+  color:#ff4d6d;
+  border:none;
+  padding:15px;
+  border-radius:50%;
+  font-size:18px;
+  cursor:pointer;
+  box-shadow:0 5px 15px rgba(0,0,0,.3);
+  z-index:1000;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .hero h1{font-size:2.2rem;}
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Happy Late Valentine, Peyya Sayang  💖</h1>
+    <p>Thank u for anything u did to our relationship, i'm verry grateful to have u 💕</p></p></p></p></p>
+  <div class="gallery-grid">
+  <img src="Foto11.jpg" onclick="openLightbox (this.src)"
+  </div>
+
+  <h3></h3> Sebelum scroll kebawah, klik dulu tombol music nya sayang.<br><br>
+  Scrollnya pelan-pelan yaa, nanti kesandung><</p>
+  </div>
+</section>
+
+<!-- GALERI -->
+<section>
+  <h2>Our Beautiful Memories 📸</h2><br>
+  <div class="gallery-grid">
+    <img src="foto1.jpg" onclick="openLightbox(this.src)">
+    <img src="foto2.jpg" onclick="openLightbox(this.src)">
+    <img src="foto3.jpg" onclick="openLightbox(this.src)">
+    <img src="foto4.jpg" onclick="openLightbox(this.src)">
+    <img src="foto5.jpg" onclick="openLightbox(this.src)">
+    <img src="foto5.jpg" onclick="openLightbox(this.src)">
+    <img src="foto6.jpg" onclick="openLightbox(this.src)">
+    <img src="foto7.jpg" onclick="openLightbox(this.src)">
+    <img src="foto8.jpg" onclick="openLightbox(this.src)">
+    <img src="foto9.jpg" onclick="openLightbox(this.src)">
+    <img src="foto10.jpg" onclick="openLightbox(this.src)">
+  </div>
+</section>
+
+
+<!-- LOVE LETTER -->
+<section>
+  <h2>To My Dearest 💌</h2><br>
+  <div class="love-letter" id="letter">
+    <p>
+      Putri Fayza Tersayang💖<br><br>
+         Terima kasih karena masih bertahan, bahkan ketika dirimu tak lagi utuh. Terima kasih karena masih memeluk erat laki-laki yang membuatmu tak utuh.<br><br>
+         Aku sadar terlalu banyak salah yang aku buat ke kamu. Aku minta maaf, kalau perjalanan hubungan ini gak semulus yang kamu harapkan, maaf kalau dihubungan ini kamu merasa berjuang sendiri. Hari ini, aku benar benar menyesali semua kesalahan yang aku buat, aku sangat sangat ingin memperbaiki semuanya. Aku tau, gak mudah buat kamu percaya sama aku lagi. tapi aku mohon, percaya aku sekali lagi, ya?
+      Aku sayang kamu, lagi.<br><br>
+      I love you 💖
+    </p>
+  </div>
+</section>
+<!-- VIDEO -->
+<section>
+  <h2>Our Little Movie 🎬</h2><br>
+    <p>Musicnya dimatiin duluu yaa!<p>
+    klik ulang tombol musicnya buat matiin.<br>
+    sudaahh? oteeii silahkan ditontonn, selamat menontonn sayangg 💖<br><br>
+  <div class="video-wrapper">
+    <video controls>
+      <source src="video1.mp4" type="video/mp4">
+      Browser kamu tidak mendukung video.
+    </video>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img">
+</div>
+
+<!-- MUSIC -->
+<audio id="bg-music" src="kotainitaksamatanpamu.mp3" loop></audio>
+<button class="music-btn" onclick="toggleMusic()">🎵</button>
+
+<script>
+// Floating hearts
+function createHeart(){
+  const heart=document.createElement("div");
+  heart.className="heart";
+  heart.innerHTML="❤";
+  heart.style.left=Math.random()*100+"vw";
+  heart.style.fontSize=Math.random()*20+10+"px";
+  document.body.appendChild(heart);
+  setTimeout(()=>heart.remove(),6000);
+}
+setInterval(createHeart,800);
+
+// Lightbox
+function openLightbox(src){
+  document.getElementById("lightbox").style.display="flex";
+  document.getElementById("lightbox-img").src=src;
+}
+function closeLightbox(){
+  document.getElementById("lightbox").style.display="none";
+}
+
+// Scroll animation
+window.addEventListener("scroll",()=>{
+  const letter=document.getElementById("letter");
+  if(letter.getBoundingClientRect().top < window.innerHeight-100){
+    letter.classList.add("show");
+  }
+});
+
+/* ================= COUNTDOWN ================= */
+// Ganti tanggal anniversary kamu di sini:
+const anniversary=new Date("Feb 14, 2027 00:00:00").getTime();
+
+setInterval(function(){
+  const now=new Date().getTime();
+  const distance=anniversary-now;
+
+  const days=Math.floor(distance/(1000*60*60*24));
+  const hours=Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+  const minutes=Math.floor((distance%(1000*60*60))/(1000*60));
+  const seconds=Math.floor((distance%(1000*60))/1000);
+
+  document.getElementById("countdown").innerHTML=
+  days+" Hari "+hours+" Jam "+minutes+" Menit "+seconds+" Detik";
+
+},1000);
+
+// Music control
+const music=document.getElementById("bg-music");
+function toggleMusic(){
+  if(music.paused){
+    music.play();
+  }else{
+    music.pause();
+  }
+}
+</script>
+</body>
+</html>
